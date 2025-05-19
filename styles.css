@@ -1,0 +1,230 @@
+@font-face {
+  font-family: manrope;
+  src: url(assets/fonts/Manrope-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: manropeBold;
+  src: url(assets/fonts/static/Manrope-Bold.ttf);
+}
+@font-face {
+  font-family: manropeMedium;
+  src: url(assets/fonts/static/Manrope-Medium.ttf);
+}
+
+:root {
+  --color-gray-900: #48556a;
+  --color-gray-500: #6e8098;
+  --color-gray-400: #9daec2;
+  --color-gray-200: #ecf2f8;
+}
+
+.textPreset1 {
+  font-family: manropeBold;
+  font-size: 1.25rem;
+  line-height: 130%;
+  letter-spacing: 0.25px;
+  margin: 0;
+}
+
+.textPreset2Medium {
+  font-family: manropeMedium;
+  font-size: 0.8125rem;
+  line-height: 140%;
+  letter-spacing: 0.12%;
+}
+
+.textPreset2Bold {
+  font-family: manropeBold;
+  font-size: 0.8125rem;
+  line-height: 140%;
+  letter-spacing: 0.12%;
+}
+
+.textPreset3 {
+  font-family: manrope;
+  font-size: 0.8125rem;
+  line-height: 140%;
+  letter-spacing: 25%;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-gray-200);
+}
+
+article {
+  z-index: 0;
+  position: relative;
+  box-shadow: 0px 40px 40px rgba(201, 213, 225, 0.5);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  width: 90%;
+  height: fit-content;
+  background-color: white;
+  border-radius: 10px;
+  section {
+    padding: 2rem 2rem 0;
+  }
+}
+
+.author {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    img {
+      border-radius: 100%;
+      width: 2.5em;
+      height: 2.5em;
+    }
+    p {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+  }
+
+  button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 100%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 70%;
+      height: 70%;
+      object-fit: contain;
+    }
+  }
+}
+
+.imgContainer {
+  height: 35%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
+}
+h1 {
+  color: var(--color-gray-900);
+}
+p.textPreset2Medium {
+  color: var(--color-gray-500);
+}
+p.textPreset2Bold {
+  color: var(--color-gray-900);
+}
+span.textPreset2Medium {
+  color: var(--color-gray-400);
+}
+
+#share-container {
+  position: absolute;
+  width: 100%;
+  display: none;
+  padding: 0.5rem 1rem;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  background-color: var(--color-gray-900);
+  div {
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  img {
+    width: 20px;
+    height: 20px;
+  }
+  svg {
+    background-color: var(--color-gray-500);
+    border-radius: 100%;
+    padding: 0.7rem;
+    object-fit: cover;
+  }
+}
+.arrowShareContainer {
+  display: none;
+}
+
+@media (width > 550px) {
+  article {
+    overflow: visible;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 70% 30%;
+    width: 70%;
+    height: fit-content;
+  }
+  .imgContainer {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    grid-row: span 2 / span 2;
+  }
+  .imgContainer img {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px 0px 0px 10px;
+  }
+  article section {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+  .textPreset1 {
+    font-size: 2rem;
+  }
+  .textPreset2Medium {
+    font-size: 1rem;
+  }
+  .author {
+    height: fit-content;
+    grid-column-start: 2;
+    margin: auto 0;
+  }
+  #share-container {
+    position: absolute;
+    width: fit-content;
+    border-radius: 10px;
+    right: 0;
+    transform: translate(23%, -120%);
+    box-shadow: 0px 40px 40px rgba(201, 213, 225, 0.5);
+  }
+  .arrowShareContainer {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-gray-900);
+    position: absolute;
+    right: 50%;
+    transform: translate(50%, 150%) rotate(45deg);
+  }
+}
+@media (width > 1440px) {
+  article {
+    width: 50%;
+  }
+}
